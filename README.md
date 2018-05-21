@@ -1,5 +1,5 @@
 # FightProof
-A mobile video game decentralized application built on the NEO blockchain https://fightproof.io
+A mobile video game decentralized application using blockchain technology and smart contracts https://fightproof.io
 
 
 F!GHTproof Whitepaper

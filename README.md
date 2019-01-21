@@ -1,5 +1,5 @@
-# FightProof
-A decentralized mobile video game application using blockchain technology and smart contracts https://fightproof.io
+# F!GHTproof
+A decentralized mobile video game using blockchain technology and smart contracts https://fightproof.io
 
 
 F!GHTproof Whitepaper

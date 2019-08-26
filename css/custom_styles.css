@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #F5F5F5;
+}
+.hover-effect {
+    -webkit-transform: scale(1.0, 1.0);
+    -moz-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+}
+.hover-effect:hover{
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    transition: transform 0.5s linear;
+}
+.navbar {
+    background: #333333;
+    border-radius: 0;
+    padding: 10px;
+}
+.navbar a {
+    color: white;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.navbar a:hover {
+    background: none;
+}
+.navbar li {
+    border-left: 2px solid #666666;
+    padding: 0 10px;
+    text-align: center;
+}
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: #333333;
+    color: yellow;
+}
+.icon-bar {
+    background: white;
+}
+#yellow-logo {
+    width: 600px;
+    position: absolute; 
+    bottom: -280px;
+    left: 28%;
+}
+#in-game {
+    margin-left: 20px;
+    padding-right: 40px;
+    margin-top: -50px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 1px black, -4px -4px 1px black;
+}
+#in-game-mar {
+    margin-top: -220px;
+}
+.mar-top {
+    margin-top: 15%;
+}
+#hand-tablet {
+    position: absolute; 
+    right: -80px; 
+    top: -150px;
+}
+.carousel-indicators li {
+    background-color: gray;
+}
+.carousel-indicators .active {
+    background-color: orange;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+
+    background-color: orange;
+    border: none;
+}
+.nav-tabs>li>a {
+    background: #C0C0C0;
+    font-size: 20px;
+    border: 1px solid gray;
+    padding: 10px 50px;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+.nav-tabs {
+    border-bottom: none;
+    padding: 0 0 20px 0;
+}
+.panel-heading {
+    padding: 20px 5px;
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: white;
+    border: none;
+    border-radius: 0px;
+}
+form {
+    background: #333366;
+    padding: 50px;
+}
+i.fa {
+    margin: 5px 10px;
+    padding: 10px;
+    width: 50px;
+    font-size: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+i.fa:hover {
+    background: orange;
+    cursor: pointer;
+}
+#embed_video {
+    position: absolute; 
+    top: 13%; 
+    left: 21.8%; 
+    width: 64%; 
+    height: 26.5%;
+}
+@media only screen and (max-width: 3840px) {
+    #yellow-logo {
+        left: 25%;
+    }
+    #embed_video {
+        top: 18%;
+        height: 35.5%;
+        left: 21.3%; 
+        width: 65.5%; 
+    }
+}
+@media only screen and (max-width: 1920px) {
+    #embed_video {
+        top: 15.5%;
+        height: 31.5%;
+    }
+}
+@media only screen and (max-width: 1920px) {
+    #embed_video {
+        top: 13%;
+        height: 27%;
+    }
+}
+@media only screen and (max-width: 1280px) {
+    #embed_video {
+        top: 12.5%;
+        height: 25.5%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #yellow-logo {
+        left: 25%;
+    }
+    #embed_video {
+        top: 12%;
+        height: 25%;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    #embed_video {
+        top: 11%;
+        height: 22.5%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    #yellow-logo {
+        left: 22%;
+    }
+    #embed_video {
+        top: 10%;
+        height: 20%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    #embed_video {
+        top: 11.5%;
+        height: 23%;
+    }
+}
+@media only screen and (max-width: 850px) {
+    #yellow-logo {
+        left: 19%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #embed_video {
+        top: 10.5%;
+        height: 21.5%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #yellow-logo {
+        left: 14%;
+    }
+    #in-game-mar {
+        margin-top: -120px;
+    }
+    .mar-top {
+        margin-top: 0%;
+    }
+    #hand-tablet {
+        position: static;
+    }
+    .nav-tabs>li>a {
+        padding: 10px 30px;
+    }
+    #embed_video {
+        top: 10.8%;
+        height: 21.5%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #yellow-logo {
+        left: 0%;
+        bottom: -220px;
+        width: 400px;
+    }
+    #embed_video {
+        top: 7.5%;
+        height: 15%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #embed_video {
+        top: 6.2%;
+        height: 12.5%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #embed_video {
+        top: 4.5%;
+        height: 10%;
+    }
+}

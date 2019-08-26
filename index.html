@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>F!GHT proof: Play.Wager.Win</title>
+    <link rel="icon" href="images/logo_red.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom_styles.css" />
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $('document').ready(function() {
+            $( "#contact" ).submit(function( event ) {
+              event.preventDefault();
+              var name = $('#name').val();
+              var email = $('#email').val();
+              var msg = $('#msg').val();
+              $.ajax({
+				method: 'POST',
+				url: 'mail.php',
+				data: {name: name, email: email, msg: msg},
+				success: function(res) {
+				  $('#form_msg').html(res);
+				}
+			  }); //AJAX
+            });
+        });
+    </script>
+    <style>
+    .padding-all {
+      padding: 0 10px;  
+    }
+    /**************Style for Pop Up**********************/
+    #popup {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2;
+    }
+    #popup > div {
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 40px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 2px #333333, -2px -2px 2px #333333;
+    }
+    </style>
+</head>
+<body>
+
+  <!------------Pop Up Box------------>
+  <!--<div id="popup">
+    <div class="text-align" style="position: relative;">
+          <img src="images/Pop-up-banner.png" class="img-responsive" style="width: 100%; height: 100%;">
+          <button style="background: rgba(0,0,0,0.5); border: none; position: absolute; top: 0; right: 0;"
+         onclick="document.getElementById('popup').style.display = 'none';">
+          <img src="images/button.png" width="50"></button>
+    </div>
+  </div>-->
+
+    <!----------Navigation Bar------>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="#"><img src="images/logo_red.png" style="width: 100px; margin-top: -25px;"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="#match_explorer">Match Explorer</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#roadmap">Roadmap</a></li> 
+              <li><a href="#crowdsale">Tokensale</a></li>
+              <li><a href="#team">Team</a></li> 
+              <li><a href="http://fightproof.io/login/login.php">Login</a></li>
+              <li><a href="http://fightproof.io/login/login.php">Sign Up</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!--------Banner---------->
+    <div class="row" style="margin-top: -20px; height: 900px;">
+      <div class="col-sm-12 col-md-12">
+        <img src="images/Splash_V3_NoLogo.png" style="width: 100%; height: 500px; position: relative;">
+        <div id="yellow-logo">
+            <img src="images/gold_fp_logo.png" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-----------In Game Section-------------->
+    <div class="row" style="background: url('images/section.jpg'); background-size: cover; padding-bottom: 20px;">
+      <div class="col-md-7" id="in-game-mar">
+        <img src="images/side_mockup_youtube.png" class="img-responsive" style="width: 100%; position: relative;" id="match_explorer">
+        <iframe id="embed_video"
+            src="https://www.youtube.com/embed/SRSH_ALH13E">
+          </iframe>
+        <img src="images/In-game-feature.png" style="float: right; margin-top: -80px; width: 300px;">
+        <div id="in-game" style="clear: both; background-image: url('images/blue-dot.png');">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-4 text-center"><img src="images/explore_icon.png" style="width: 130px;  height: 110px;"></div>
+                <div class="col-sm-8" style="padding: 0 0 0 50px; font-size: 13px;">
+                    <p class="mar-top" style="color: white;">Explore the vast FIGHT proof universe through location-based gameplay!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-4 text-center"><img src="images/Battle.png" style="width: 150px;  height: 130px;"></div>
+                <div class="col-sm-8" style="padding: 0 0 0 50px; font-size: 13px;">  
+                  <p class="mar-top" style="color: white;">Battle online or over WiFi Direct with 1-on-1 Brawl Matches where only the strong survive!</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-4 text-center"><img src="images/cOLLECT.png" style="width: 110px; height: 120px;"></div>
+                  <div class="col-sm-8" style="padding: 0 0 0 50px; font-size: 13px;">
+                    <p class="mar-top" style="color: white;">With tons of digital items, special power-ups, and even the rare, one-of-a-kind, collectible characters... Quickly filling up your inventory shouldn't be hard.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-4 text-center"><img src="images/wager_icon.png"  style="width: 130px;  height: 100px;"></div>
+                  <div class="col-sm-8" style="padding: 0 0 0 50px; font-size: 13px;">
+                    <p class="mar-top" style="color: white;">In order to join a Brawl Match, a player's wager must be accepted by the opposing side. Wagers come in the form of digital assets or F!GHTproof's native token, TKO.  </p>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-4 text-center"><img src="images/customize_icon.png" style="width: 130px;  height: 100px;"></div>
+                  <div class="col-sm-8" style="padding: 0 0 0 50px; font-size: 13px;">
+                    <p class="mar-top" style="color: white;">Customize your fighter's character the way you want with hundreds of unique combinations in such areas as;  Physical Appearance, Stamina, Fight Technique &amp; Weapons Training!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                <div class="col-sm-4 text-center"><img src="images/blackmarket_icon.png" style="width: 130px;  height: 125px;"></div>
+                <div class="col-sm-8" style="padding: 0 0 0 50px; font-size: 13px;">
+                  <p style="color: white;">Black market is a real-world location which houses a virtual marketplace where players can buy, trade, or sell their virtual goods, weapons, rare collector's digital assets, or even one of their very own Fighters who just happen to be listed in the TOP 100! Everything has a price in this world!</p>
+                </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+          <img src="images/home_mock_v2.png" class="img-responsive" style="margin-bottom: -0px;">
+      </div>
+    </div>
+
+    <!-------Documents Section-------->
+    <div class="container">
+      <div class="row" style="padding: 30px 0;">
+        <h1 class="text-muted" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">DOCUMENTS</h1><br><br>
+        <div class="col-xs-6 col-sm-4 col-md-2 col-md-offset-1">
+          <a href="http://fightproof.io/F!GHTproof_White_Paper_v05.pdf" target="_blank">
+            <img src="images/documents_pic.png" style="width: 100%; height: 200px;">
+            <p class="text-muted text-center" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Whitepaper</p>
+          </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+            <a href="http://fightproof.io/onepager.png" target="_blank">
+              <img src="images/documents_pic.png" style="width: 100%; height: 200px;">
+              <p class="text-muted text-center" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Onepager</p>
+            </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2 col-md-offset-2">
+          <a href="http://fightproof.io/privacypolicy.html">
+            <img src="images/documents_pic.png" style="width: 100%; height: 200px;">
+            <p class="text-muted text-center" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Privacy Policy</p>
+          </a>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <a href="http://fightproof.io/terms.pdf">
+            <img src="images/documents_pic.png" style="width: 100%; height: 200px;">
+            <p class="text-muted text-center" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Terms &amp; Condition</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!--------Blockchain feature---------->
+    <div class="row" style="background: url('images/blue-dot.png'); padding: 20px 10px 0; color: white;" id="features">
+      <div class="col-md-5" style="padding-top: 50px;">
+          <img src="images/block-chain-features.png">
+          <img src="images/desktop_mock.png" class="img-responsive">
+      </div>
+      <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-6 text-center" style="padding: 10px 0;">
+              <img src="images/anonymous_icon.png" style="width: 160px; height: 150px;">
+              <p class="text-left padding-all">Players shall be able to register their very own unique usernames that will act as their unique identifier on the blockchain which would make transactions between TKO wallets easier and safer.</p>
+            </div>
+            <div class="col-md-6 text-center" style="padding: 10px 0;">
+              <img src="images/mining_icon.png" style="width: 200px; height: 150px;">
+              <p class="text-left padding-all">Don't have fancy ASIC mining equiptment? Don't worry, in our world our game is your miner! 
+Only while you are in-game will TKO be automatically mined in the background without using heavy recources or energy!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 text-center" style="padding: 10px 0;">
+              <img src="images/matchexplorer_icon.png" style="width: 200px; height: 150px;">
+              <p class="text-left padding-all">Similar to a Block Explorer, except instead of transactions, it will display in full transparency, every Brawl Match along with its associated fight data. Such data consists of extremely detailed accounts of each Brawl Match, organized and recorded onto the blockchain in a "Point-for-Action" format. "Point-for-Action" refers to the individual actions a fighter has made during a match and the points gained or lost because of that action. ie.</p>
+              <small class="text-left padding-all">
+                +Every Attack (Punch, Kick, Combo)-Every Miss (No Contact/phantom)<br>
+                -Every Hit (Damage Taken)+Every Block (Defensive Move)
+              </small>
+            </div>
+            <div class="col-md-6 text-center" style="padding: 10px 0;">
+              <img src="images/contract_icon.png" style="width: 200px; height: 150px;">
+              <p class="text-left padding-all">A Smart contract is a computer protocol intended to digital facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow the performance of credible transactions without third parties. These transactions are trackable and irreversible,[1] Smart contracts were first proposed by Nick Szabo, who coined the term, in 1994.[2]</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 text-center" style="padding: 10px 0;">
+              <img src="images/leaderboard_icon.png" style="width: 170px; height: 150px;">
+              <p class="text-left padding-all">Located on the homepage of Match Explorer is a hierarchy of Fighter's names and related fight information pertaining to the skill and history of a specific fighter. We call this hierarchy, our Leaderboard. On this Leaderboard, at the top of the list, lies a fighter's name with his total score of Action Points tallied up next to the words "El Heffe"... that is the number one spot, EI Heffe, The Boss, the best fighter in the game.</p>
+            </div>
+            <div class="col-md-6 text-center" style="padding: 10px 0;">
+              <img src="images/nodes_icon.png" style="width: 200px; height: 150px;">
+              <p class="text-left padding-all">A Servicenodes, also referred to as a F!GHTnode, are similar to a masternode in ownership requirements and reward payouts. There a two main functions to a F!GHTnode:<br>1. To store important game data such as entire Katharos blockchain.<br>2. To stablize the network of the Katharos <br> Mainnet.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!------------Road Map---------------->
+    <div class="row" id="roadmap">
+        <div class="col-md-12">
+          <img src="images/roadmap_noicons.png" class="img-responsive" style="margin-top: -70px;">
+        </div>
+    </div>
+
+    <!--------Network-------------------->
+    <div class="row">
+      <div class="col-md-12">
+        <img src="images/katharos_network.jpg" class="img-responsive">
+      </div>
+    </div>
+
+    <!---------Token Structure------------>
+    <div class="container" style="padding: 50px 0px; position: relative;">
+      <h1 class="text-muted">Token <span style="color: navy">Structure</span></h1><br><br>
+      <div class="row">
+          <div class="col-md-7">
+            <img src="images/token_allocation.png" class="img-responsive" style="width: 100%;">
+          </div>
+          <div class="col-md-5">
+              <img src="images/AR_HANDS_splash.png" class="img-responsive" id="hand-tablet">
+          </div>
+      </div>
+      <br><br>
+      <div class="row" style="background: white;">
+        <div class="col-md-8">
+            <img src="images/graph-left.png" class="img-responsive" style="width: 100%;">
+        </div>
+        <div class="col-md-4">
+            <img src="images/graph.png" class="img-responsive" style="width: 100%;">
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-6">
+            <img src="images/token_metrics.png" class="img-responsive" style="width: 100%;">
+        </div>
+        <div class="col-md-6">
+            <img src="images/token-generation-event.png" class="img-responsive" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+    
+    <!---------------------Team------------------>
+    <div class="row" id="team">
+      <h1 class="text-center" style="background-image: url('images/team_backg.png'); background-size: contain; padding: 80px 0 20px; color: white;">
+        INDIE proof Team</h1>
+        <div class="row" style="background-image: url('images/blue-dot.png'); padding: 0 40px; color: white; margin-top: -10px;">
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/Joe.png" class="img-responsive" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -110px;">
+              <h3 style="color: black;">Joe Fossum-Perez</h2>
+              <h5 style="font-weight: bold; color: #8C79C4; margin-top: -7px;">Founder at INDIEproof</h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.linkedin.com/in/joe-fossum-perez-4388263a" target="_blank" class="fa fa-linkedin" style="border: 2px solid #337AB7; padding: 5px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/Ghazi Ijaz.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -108px;">
+              <h3 style="color: black;">Ghazi Ijaz</h3>
+              <h5 style="color: #8C79C4; font-weight: bold; margin-top: -7px;">Co-Founder & Unity Developer</h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.linkedin.com/in/ghazi-ejaz-801b065b/" target="_blank" class="fa fa fa-linkedin" style="border: 2px solid #337AB7; padding: 5px 5px 3px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/Austin.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -110px;">
+              <h3 style="color: black;">Austin Metcalf</h3>
+              <h5 style="font-weight: bold; color: #8C79C4; margin-top: -7px;">VP of Marketing</h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.linkedin.com/in/austin-metcalf-b3662428/" target="_blank" class="fa fa-linkedin" style="border: 2px solid #337AB7; padding: 5px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/Darren.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -110px;">
+              <h3 style="color: black;">Darren Rockwell</h3>
+              <h5 style="font-weight: bold; color: #8C79C4; margin-top: -7px;">Android Developer</h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.linkedin.com/in/darren-rockwell-8b2a5354/" target="_blank" class="fa fa-linkedin" style="border: 2px solid #337AB7; padding: 5px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+        </div>
+        <div class="row" style="background-image: url('images/blue-dot.png'); padding: 0 40px; color: white;">
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/Dustin.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -110px;">
+              <h3 style="color: black;">Dustin Scroggins</h3>
+              <h5 style="font-weight: bold; color: #8C79C4; margin-top: -7px;">Computer Networking Technician</h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.linkedin.com/in/dustinscroggins/" target="_blank" class="fa fa-linkedin" style="border: 2px solid #337AB7; padding: 5px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/holly.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -110px;">
+              <h3 style="color: black;">Holly Evans</h3>
+              <h5 style="color: #8C79C4; font-weight: bold; margin-top: -7px;">Assistant to CEO</h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.facebook.com/holly.evans.393" target="_blank" class="fa fa fa-facebook" style="border: 2px solid #337AB7; padding: 5px 10px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/Afridi.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -106px;">
+              <h3><a href="https://www.fiverr.com/muhibafridi" target="_blank" style="color: black;">Muhib Afridi</a></h3>
+              <h5 style="font-weight: bold; margin-top: -7px;"><a href="https://www.fiverr.com/muhibafridi" target="_blank" style="color: #8C79C4;">Lead Web Designer</a></h5>
+              <p class="text-center" style="font-size: 22px;"><a href="https://www.linkedin.com/in/muhib-afridi-331258142/" target="_blank" class="fa fa-linkedin" style="border: 2px solid #337AB7; padding: 5px 5px 3px; border-radius: 5px;"></a></p>
+            </div>
+            <p></p>
+          </div>
+          <div class="col-md-3 hover-effect" style="padding: 20px 5px;">
+            <img src="images/extra.png" style="width: 100%; border-radius: 50%;">
+            <div class="text-center" style="margin-top: -90px;">
+              <h2><a href="#contact" style="color: black;">Join Us</a></h2>
+              <h4 style="font-weight: bold;"><a href="#contact" style="color: #8C79C4;">Apply Us</a></h4>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-----------Ecosystem-------->
+    <div class="container" style="padding: 40px 0;" id="crowdsale">
+      <h1 class="text-center">F!GHT proof <span style="color: navy;">TKO Protocol</span></h1><br><br>
+      <div class="row">
+        <div class="col-md-6"><img src="images/match-wager-system.png" class="img-responsive" style="width: 100%;"><br></div>
+        <div class="col-md-6"><img src="images/match-explorer.png" class="img-responsive" style="width: 100%;"></div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-6"><img src="images/fight-node.png" class="img-responsive" style="width: 100%;"><br></div>
+        <div class="col-md-6"><img src="images/leader-board.png" class="img-responsive" style="width: 100%;"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-5">
+          <button class="btn btn-block" style="background: orange; color: white; border-radius: 10px;">JOIN CROWDSALE</button>
+        </div>
+      </div>
+    </div>
+      
+    <!---------Registration-------->
+    <div style="background-image: url('images/blue-dot.png'); padding: 0 0 50px 0; color: white;">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 class="text-center">REGISTER TO BE WHITELISTED<img class="hidden-xs" src="images/fp_metal.png" style="width: 200px; margin-top: -40px;"> TOKEN SALE</h3>
+            <h4 class="text-center">Create an account and gain access to many exciting features and content only available to our community!</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
+          <button class="btn btn-block" style="background: transparent; border: 1px solid orange; border-radius: 10px;"><i class="glyphicon glyphicon-user"></i> &nbsp; Coming Soon</button>
+        </div>
+      </div>
+    </div>
+
+    <!-------------Our Blog------------------>
+    <!--<div class="container" style="padding: 50px 0;">
+      <h2 class="text-center">Our <span style="color: orange;">Blog</span></h2><br><br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">-->
+          <!-- Indicators -->
+        <!--<ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>-->
+      
+        <!-- Wrapper for slides -->
+        <!--<div class="carousel-inner">
+          <div class="item active" style="padding-bottom: 5%;">
+            <div class="row">
+              <div class="col-md-7" style="background-image: url('images/sucessfull.jpg'); background-size: cover;">
+                <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                  <h3>SUCCESSFUL $33 MILLION JOBGO ICO TOKEN SALE CONCLUDES EARLY</h3>
+                  <br><br><br><br><br><br><br><br>
+                  <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                </div>
+              </div>
+              <div class="col-md-4 col-md-offset-1" style="background-image: url('images/bitcoin1.jpg'); background-size: cover;">
+                <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                  <h3>SUCCESSFUL $33 MILLION CONCLUDES EARLY</h3>
+                  <br><br><br><br><br><br><br><br>
+                  <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-4" style="background-image: url('images/bitcoin2.jpg'); background-size: cover;">
+                <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                  <h3>SUCCESSFUL $33 MILLION CONCLUDES EARLY</h3>
+                  <br><br><br><br><br><br><br><br>
+                  <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                </div>
+              </div>
+              <div class="col-md-7 col-md-offset-1" style="background-image: url('images/technology.jpg'); background-size: cover;">
+                <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                  <h3>SUCCESSFUL $33 MILLION JOBGO ICO TOKEN SALE CONCLUDES EARLY</h3>
+                  <br><br><br><br><br><br><br><br>
+                  <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item" style="padding-bottom: 5%;">
+              <div class="row">
+                <div class="col-md-7" style="background-image: url('images/sucessfull.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION JOBGO ICO TOKEN SALE CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+                <div class="col-md-4 col-md-offset-1" style="background-image: url('images/bitcoin1.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-4" style="background-image: url('images/bitcoin2.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" style="background-image: url('images/technology.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION JOBGO ICO TOKEN SALE CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="item" style="padding-bottom: 5%;">
+              <div class="row">
+                <div class="col-md-7" style="background-image: url('images/sucessfull.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION JOBGO ICO TOKEN SALE CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+                <div class="col-md-4 col-md-offset-1" style="background-image: url('images/bitcoin1.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-4" style="background-image: url('images/bitcoin2.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+                <div class="col-md-7 col-md-offset-1" style="background-image: url('images/technology.jpg'); background-size: cover;">
+                  <div style="background: rgba(0,0,0,0.7);  padding: 20px; color: white;">
+                    <h3>SUCCESSFUL $33 MILLION JOBGO ICO TOKEN SALE CONCLUDES EARLY</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <button class="btn" style="background: transparent; border: 1px solid orange;">READ ARTICLE</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <!-----------------Ask Questions---------------------->
+    <div class="container" style="padding-top: 40px; padding-bottom: 40px; background: white;">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Frequently Asked Questions</h2><br><br>
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home">ABOUT</a></li>
+              <!--<li><a data-toggle="tab" href="#menu1">TOKEN SALE &amp; TOKEN</a></li>
+              <li><a data-toggle="tab" href="#menu2">BUY TOKEN</a></li>-->
+            </ul>
+          
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                          What is Fight proof?</a>
+                        </h4>
+                      </div>
+                      <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">A Player vs Player mobile game built to run on a fork of the TRON Network through its multihash algorithm called the TRON Protocol. The TRON Protocol consists of Smart Contracts running on the TRON Virtual Machine and a combination of the following hash algorithm: sha2-256, sha2-512 and sha3. F!GHTproof is bringing it back old school with its arcade style of 1-on1 gameplay like that of classic titles, Street Fighter and Mortal Kombat, but with a modern twist! F!GHTproof is to feature not only location-based gameplay with geo-location tagging of digital assets but also those same digital asset scan be viewed through your mobile device in a real world with the use of augmented reality. But wait, it gets even better... F!GHTproof's main attraction is its F!GHT-N!GHT Ecosystem which includes the Match Wager System, Match Explorer, and the Leaderboard. Players will now have the ultimate bragging rights of saying, "Put your money where your mouth is!"</div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                          Are there different versions of your TKO Token?</a>
+                        </h4>
+                      </div>
+                      <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">Yes. Our TKO token will first be available via our Token Generation Event. This token is a TRC-20 Token based on the TRON Network. It will be our TRON version, hence the name TTKO. However, our TTKO Token will eventually be swapped out for TKO, our mainnet token, once we get our very own blockchain we call Katharos, up and running.</div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                          What's the name of your company?</a>
+                        </h4>
+                      </div>
+                      <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">Our company name is INDIEproof, LLC. and you can find our company website at http://indieproof.io</div>
+                      </div>
+                    </div>
+                  
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                        Are you incorporated and/or regulated? If so where?</a>
+                      </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                      <div class="panel-body">INDIEproof, LLC. is incorporated in California, United States. Our current office is located in Vacaville, CA. but is not open to the public. We are to open a new office soon, which would be accessable to the public, after the crowdsale is completed. We hope to land officespace close to our community which would be either in San Fransisco, CA. or Sacramento, CA. If anyone has any ideas of where we should open our office, shoot us an email at info@indieproof.io</div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+                        In the roadmap you say you'll be successfully funded, but what if you're not, what's plan B?</a>
+                      </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                      <div class="panel-body">If we do not obtain our Soft Cap of $100,000 then we would refund any ETH, BTC, or TRX back to our TGE participants. That won't be the end of us though. We will continue the work on F!GHTproof with using our own personal captial. It will take much longer to complete but we have a dream we need to accomplish and nothing is going to stop us from doing so. We could use the help of community members with experience in Unity and blockchain technology.</div>
+                    </div>
+                  </div>
+                
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+                        Do you have a website, twitter handler, telegram group, GitHub repository, medium blog, subreddit?</a>
+                      </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse">
+                      <div class="panel-body">Yes, we have a few social media handles, GitHub repository, medium blog and telegram group. Just visit our links at the bottom of the page.</div>
+                    </div>
+                  </div>
+              
+              </div>
+              </div>
+              <div id="menu1" class="tab-pane fade">
+                <h3>Menu 1</h3>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+              <div id="menu2" class="tab-pane fade">
+                <h3>Menu 2</h3>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-----------------Partner Contributer---------------->
+    <div style="padding: 40px 0;">
+      <h2 class="text-center">Collaboration <span style="color: orange;">Partnerships<span></h2>
+      <br><br>
+      <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel1" data-slide-to="1"></li>
+          <li data-target="#myCarousel1" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active" style="height: 300px;"></div>
+          <div class="item" style="height: 300px;"></div>
+          <div class="item" style="height: 300px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--------Contact Section------>
+    <div style="background: url('images/contact-bg.png'); background-size: cover; padding: 80px 0;">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1" style="color: white;">
+            <br><br><br>
+            <h1 style="font-weight: bold;" class="text-center">Join the Movement</h1>
+            <div class="text-center">
+              <a href="https://www.facebook.com/TKOCoin" style="color: white;"><i class="fa fa-facebook"></i></a>
+              <a href="https://twitter.com/indieproofllc" style="color: white;"><i class="fa fa-twitter"></i></a>
+              <a href="https://github.com/indieproof" style="color: white;"><i class="fa fa-github"></i></a>
+              <a href="https://bitcointalk.org/index.php?topic=4625705" style="color: white;"><i class="fa fa-bitcoin"></i></a>
+              <a href="https://t.me/indieproof" style="color: white;"><i class="fa fa-telegram"></i></a>
+              <a href="https://medium.com/@indieproof" style="color: white;"><i class="fa fa-medium"></i></a>
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-md-4">
+          <form id="contact">
+            <div id="form_msg"></div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="name" type="text" class="form-control" name="name" placeholder="Your Name.." required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input id="email" type="email" class="form-control" name="email" placeholder="Your Email.." required>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+              <textarea id="msg" class="form-control" name="msg" placeholder="Your message.." required></textarea>
+            </div><br>
+            <button type="submit" class="btn btn-block" style="border-radius: 5px; background: #cc6600; color: white;"><i class="glyphicon glyphicon-send"></i> &nbsp; SEND MESSAGE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-------Footer---------------->
+    <div>
+      <div class="row" style="color: white; background: #333366; padding: 10px;">
+        <div class="col-md-4 text-center">
+          Copyright &copy; INDIEproof, LLC. All rights reserved.
+        </div>
+        <div class="col-md-offset-5 col-md-3">
+          <a href="#" style="color: white;">Terms of Use</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://fightproof.io/privacypolicy.html" style="color: white;">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+

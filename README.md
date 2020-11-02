@@ -1,21 +1,15 @@
 # F!GHTproof
-A  decentralized mobile video game in development by INDIEproof, LLC. The development team is using the Unity engine combined with the Katharos blockchain (a "main chain" of TRON Network) https://fightproof.io
+A blockchain based PvP mobile fighting video game with RPG aspects.  F!GHTPROOF is currently utilizing the Ethereum blockchain but will be eventually switching over to its very own blockchain or one suitable to scale with the growth and developemnt of F!GHTPROOF. Blockchain technology in F!GHTPROOF is needed in order to record, store, sort and display in-game combat related data and proof of ownership for the many F!GHTPROOF digital assets also known as non-fungibles or NFTs. Blockchain technology will also secure those digital assets and the overall gameplay of  F!GHTPROOF, from malicious characters with the intent on harming the F!GHTPROOF ecosystem through acts of cheating and and/or theft.
 
+F!GHTPROOF is bringing it back old school with the arcade style of 1-on-1 combat gameplay witnessed in such classic titles as Street Fighter and Mortal Kombat but with a modern twist! F!GHTPROOF is to feature both an option to wager our very own utility token/cryptocurrency - the TKO token. The Total Knock Out token (TKO) is dual functioning. It acts as both a utility token and also as an in-game cryptocurrency token to wager during Brawl Matches or to purchase items from in-game marketplaces.
 
-F!GHTproof Whitepaper
-( Pronounced, "Fight-Proof " )
+Besides our TKO token, F!GHTPROOF has many more exciting features and options to play with. A new option, when it comes to placing a wager during a Brawl Match is the option to wager a digital asset (erc-721/NFT) instead of TKO just as long as the digital asset is of equal value to the opponant's wager in TKO.  F!GHTPROOF is also proud to feature our location-based gameplay that includes randomly generated real-world location spawning of both common, uncommon, rare & ledgendary in-game digital assets such as power-up cards, skill & tactic cards, weapon cards, and character cards (Fighter Score Card/Brawler Contract) for players to collect, trade, buy & sell.
 
-
-A Player vs Player mobile game with the added bonus of a TRON Network main chain keeping tabs while using a DPoS hashing algorithm!
-F!GHTproof is bringing it back old school with its arcade style of 1-on1 gameplay like that of classic titles, Street Fighter and Mortal
-Kombat, but with a modern twist! F!GHTproof is to feature location-based gameplay with geo-location tagging of digital assets but also those same digital assets can be wagered in a Brawl Match. F!GHTproof's main attraction is its F!GHT-N!GHT Ecosystem which includes the Match Wager System, Match Explorer, and the Leaderboard. Players will now have the ultimate bragging rights of saying, "Put your money where your mouth is!"
-
-
-v0.6; revision completed July 10th, 2018
+v0.7; revision completed October 20th, 2020
 
 IndieProof, LLC.
 Vacaville, CA
 
-https://mytalentnetwork.com/fightproof/F!GHTproof_White_Paper_v05.pdf
+http://fightproof.io/FIGHTPROOF_WHITEPAPER_v07_EN.pdf
 
 
